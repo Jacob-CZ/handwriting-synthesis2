@@ -1,3 +1,4 @@
+import time
 import numpy as np
 from handwriting_synthesis import Hand
 
@@ -28,6 +29,7 @@ lines = [
 if __name__ == '__main__':
     hand = Hand()
 
+    startTime = time.time()
     # usage demo
     biases = [.75 for i in lines]
     styles = [9 for i in lines]
@@ -78,3 +80,5 @@ if __name__ == '__main__':
         biases=biases,
         styles=styles,
     )
+    
+    print(f"Time taken: {time.time() - startTime:.2f} seconds")
